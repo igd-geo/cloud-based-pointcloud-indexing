@@ -2,7 +2,7 @@
 
 This application enables highly parallelised and linearly scalable point cloud preprocessing capabilities through the use of Apache Spark and Apache Cassandra. The progressive mode offers further functionality possibilities through the use of successive indexing in individual regions of the point cloud.
 
-This repository contains an executable jar file as well as the source code and the libraries that were utilised (in the form of pom.xml and jar files). The jar file can be executed from the command line of the master node called from within the Spark Cassandra cluster. If called using the command line, the following parameters must be defined in the given order.
+This repository contains the source code and the libraries that were utilised (in the form of pom.xml and jar files). A generated jar file can be executed from the command line of the master node called from within the Spark Cassandra cluster. If called using the command line, the following parameters must be defined in the given order.
 - Master-URL
 - Cassandra Host IP
 - Generate new Cassandra Table?: <true/false><br/>
@@ -28,7 +28,7 @@ This repository contains an executable jar file as well as the source code and t
 
 
 For example, running the application in the Apache Spark standalone cluster mode would look like this:<br/>
-./spark-submit --class process.Main "pointcloudIndexing.jar" spark://192.163.0.97:7077 192.163.0.56 true indexed pc1 1 32768 11 2 8 
+./spark-submit --class process.Main "<name_of_jarfile>.jar" spark://192.163.0.97:7077 192.163.0.56 true indexed pc1 1 32768 11 2 8 
 /home/ubuntu/Documents/Pointclouds/ false false -1
 
 Instructions of how a Spark Cassandra cluster can be deployed can be found in https://opencredo.com/blogs/deploy-spark-apache-cassandra/.
